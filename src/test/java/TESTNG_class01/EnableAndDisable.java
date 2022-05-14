@@ -4,20 +4,20 @@ import org.testng.annotations.Test;
 
 public class EnableAndDisable {
 
-    @Test(enabled = false)
+    @Test(enabled = false )
     public void FirstTest(){
         System.out.println("1st");
-    }
 
-    @Test()
+    }
+    @Test
     public void SecondTest(){
+
         System.out.println("2nd");
     }
-
-    @Test()
+    @Test
     public void ThirdTest(){
-        System.out.println("3rd");
 
+        System.out.println("3rd");
     }
 
 }

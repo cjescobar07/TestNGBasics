@@ -12,17 +12,18 @@ import org.testng.asserts.SoftAssert;
 
 public class SoftAssertion {
     WebDriver driver;
-//    go to syntax login
-//    enter wrong crdentails
+//go to syntax login
+//    enter wrong credentials
 //    verify the message is "invalid Credentials
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void OpenBrowser(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
     }
-    @Test
+
+    @Test(groups = "regression")
     public void VerifyCredentials() {
 
         SoftAssert soft=new SoftAssert();
@@ -31,7 +32,6 @@ public class SoftAssertion {
         WebElement Username = driver.findElement(By.id("txtUsername"));
         boolean displayed = Username.isDisplayed();
         Username.sendKeys("123456");
-
         driver.findElement(By.id("txtPassword")).sendKeys("123456");
         driver.findElement(By.id("btnLogin")).click();
         String text = driver.findElement(By.id("spanMessage")).getText();
@@ -44,12 +44,17 @@ public class SoftAssertion {
         soft.assertTrue(displayed);
 
 
-//      check all asseertions
-//      soft.assertAll();
+//        check all assertions
+        soft.assertAll();
 
     }
 
-    @AfterMethod
+    @Test(groups = "smoke")
+    public void loginTest2(){
+        System.out.println("I am the test for login under smoke");
+    }
+
+    @AfterMethod(alwaysRun = true)
     public  void  CloseBrowser(){
         driver.quit();
     }

@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 public class DependsOn {
 
     @Test
-    public void login(){
-        System.out.println(10/0);
+    public  void login(){
+        System.out.println("this is a login test");
     }
 
     @Test(dependsOnMethods = "login")
-    public void verificationOfDashBoard(){
-        System.out.println("dashboard");
-    }
+    public void verificationOfDashboard(){
 
+        System.out.println("this is dashboard");
+    }
 }

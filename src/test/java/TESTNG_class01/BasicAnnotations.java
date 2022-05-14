@@ -8,28 +8,29 @@ public class BasicAnnotations {
 
     @Test
     public void cfirstTest(){
-        System.out.println("This is my first test case");
+        System.out.println("This is my first testcase");
     }
 
     @Test
     public void asecondTest(){
-        System.out.println("This is my second test case");
+        System.out.println("This is my second testcase");
     }
 
     @Test
     public void bthirdTest(){
-        System.out.println("This is my third test case");
+        System.out.println("This is my third testcase");
     }
 
     @BeforeMethod
-    public void beforeMethod(){
-        System.out.println("I am a Pre-Condition");
+    public void beforemethod(){
+        System.out.println("***************I am Precondition**********");
+
     }
 
     @AfterMethod
-    public void afterMethod(){
-        System.out.println("I am a Post Condition");
-    }
+    public  void aftermethod(){
 
+        System.out.println("^^^^^^^^^^I am Postcondition^^^^^^^^^^^^");
+    }
 
 }

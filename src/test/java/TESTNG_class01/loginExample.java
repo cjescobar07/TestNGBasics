@@ -15,13 +15,13 @@ public class loginExample {
     //    to login into syntax HRMS application with following crdentials
 //    userName: Admin
 //    password :12345
-    @Test (priority = 2)
+    @Test(priority = 2)
     public void ainvalidCredentials1(){
         driver.findElement(By.id("txtUsername")).sendKeys("Admin");
         driver.findElement(By.id("txtPassword")).sendKeys("12345");
         driver.findElement(By.id("btnLogin")).click();
         String text = driver.findElement(By.id("spanMessage")).getText();
-        System.out.println(text);
+        System.out.println("atest"+text);
 
     }
 
@@ -34,7 +34,7 @@ public class loginExample {
         driver.findElement(By.id("txtPassword")).sendKeys("123456");
         driver.findElement(By.id("btnLogin")).click();
         String text = driver.findElement(By.id("spanMessage")).getText();
-        System.out.println(text);
+        System.out.println("btest"+text);
 
     }
     // precondition--> open the browser and navigate to the URL
@@ -50,5 +50,4 @@ public class loginExample {
 
         driver.quit();
     }
-
 }

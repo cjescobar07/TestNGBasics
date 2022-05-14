@@ -50,5 +50,4 @@ public class HardAssertion {
         driver.quit();
     }
 
-
 }
